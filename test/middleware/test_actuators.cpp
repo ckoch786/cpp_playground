@@ -1,25 +1,9 @@
 #include <gtest/gtest.h>
-#include "middleware/actuators.h"
-
-class ActuatorsTest : public ::testing::Test {
-    protected:
-        void SetUp() override {
-            controller = new control::Actuators();
-        }
-
-        void TearDown() override {
-            delete controller;
-        }
-
-        control::Actuators* controller;
-};
-
-TEST_F(ActuatorsTest, first) {
-
-    EXPECT_EQ(1, 0);
-}
+#include "actuators.h"
 
 TEST(Actuators, Fail) {
 
+    middleware::Actuators actuators;
+    actuators.init();
     EXPECT_EQ(1, 0);
 }

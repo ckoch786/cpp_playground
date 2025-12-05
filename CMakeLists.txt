@@ -27,22 +27,9 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-# Enable testing
+# Enable testing and delegate test target creation to the `test/` subdirectory.
 enable_testing()
 
-# Create test executable
-add_executable(playground_tests
-    test/test_main.cpp
-    # Add more test files here as you create them
-)
-
-# Link tests with your code library and gtest
-target_link_libraries(playground_tests
-    playground_lib  # This comes from code/CMakeLists.txt
-    gtest
-    gmock
-)
-
-# Register tests with CTest
-include(GoogleTest)
-gtest_discover_tests(playground_tests)
+# Add the `test` subdirectory which contains the test CMake logic
+# (it will create the `playground_tests` target and register tests).
+add_subdirectory(test)
