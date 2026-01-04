@@ -5,8 +5,8 @@
 namespace middleware {
     class Actuators {
     public:
-        Actuators();
-        void init(void);
+        virtual void init(void) = 0;
+        virtual void write(bool on);
     };
 }
 

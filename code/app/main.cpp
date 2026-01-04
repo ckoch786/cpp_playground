@@ -10,12 +10,13 @@ using namespace std;
 
 int main(void) {
 	/* Middleware */
-	middleware::Actuators actuators;
-	actuators.init();
+	middleware::Light light;
+	light.init();
+	control::LightController lightController;
 
 	uint i = 0;
 	while (i < 6) {
-		control::light_controller_update();
+		lightController.update();
 		++i;
 	}
 

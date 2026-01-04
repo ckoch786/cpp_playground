@@ -1,9 +1,6 @@
-// #include <gtest/gtest.h>
-// #include "control/light_controller.h"
+#include <gtest/gtest.h>
+#include "light_controller.h"
 
-// class LightControllerTest : public ::testing::Test {
-//     protected:
-//         void SetUp() override {
-//             controller = new controller::
-//         }
-// }
+TEST(Light_Controller, update) {
+    EXPECT_EQ(1, 0);
+}

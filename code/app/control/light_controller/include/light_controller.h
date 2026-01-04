@@ -2,7 +2,11 @@
 #define LIGHT_CONTROLLER_H
 
 namespace control {
-    void light_controller_update(void);
+    class LightController {
+    public: 
+        LightController();
+        void update(void);
+    };
 }
 
 #endif
